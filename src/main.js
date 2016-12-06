@@ -5,7 +5,8 @@ import Hello from './components/Hello'
 
 Vue.use(VueRouter)
 
-let router = new VueRouter({
+/* eslint-disable no-new */
+new VueRouter({
   mode: 'history',
   base: '/foo',
   routes: [
@@ -18,15 +19,3 @@ let router = new VueRouter({
     { path: '/hello', component: Hello }
   ]
 })
-
-/* eslint-disable no-new */
-new Vue({
-  router,
-  template: `
-    <div id="app">
-      <router-link to="/index">home</router-link>
-      <router-link to="/hello">hello</router-link>
-      <router-view/>
-    </div>
-  `
-}).$mount('#app')
